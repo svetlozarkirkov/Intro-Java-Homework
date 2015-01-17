@@ -23,11 +23,11 @@ public class DeckOfCards {
         Document document = new Document();
         PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filename));
         document.open();    
-        Font symbols = new Font(Font.FontFamily.SYMBOL  , 14, Font.BOLD);
-        Font normal = new Font(Font.FontFamily.HELVETICA,14,Font.BOLD);
-        Font normalRed = new Font(Font.FontFamily.HELVETICA,14,Font.BOLD,BaseColor.RED);
-        Font symbolsRed = new Font(Font.FontFamily.SYMBOL,14,Font.BOLD,BaseColor.RED);
-        int widthPerc = 63;
+        Font symbols = new Font(Font.FontFamily.SYMBOL  , 12, Font.BOLD);
+        Font normal = new Font(Font.FontFamily.HELVETICA,12,Font.BOLD);
+        Font normalRed = new Font(Font.FontFamily.HELVETICA,12,Font.BOLD,BaseColor.RED);
+        Font symbolsRed = new Font(Font.FontFamily.SYMBOL,12,Font.BOLD,BaseColor.RED);
+        int widthPerc = 52;
         
         for (int i = 0; i < numbers.length;i++) {
         	PdfPTable table = new PdfPTable(8);
@@ -48,19 +48,18 @@ public class DeckOfCards {
             	    comb.add(second); 
                 }      		
         		cell = new PdfPCell(comb);
-        		cell.setFixedHeight(56f);
+        		cell.setFixedHeight(48f);
         		cell.setBorderWidth(1);
         		cell.setBorderColor(BaseColor.DARK_GRAY);
-        		cell.setPaddingTop(22);
-        		cell.setPaddingLeft(10);
+        		cell.setPaddingTop(16);
+        		cell.setPaddingLeft(7);
         		Paragraph bord = new Paragraph(" ");
         		PdfPCell border = new PdfPCell(bord);
         		border.setBorderColor(BaseColor.WHITE);
         		border.setBorderWidth(0);
         		table.addCell(cell);
         		table.addCell(border);
-        		//table.setSpacingBefore(2);
-        		table.setSpacingAfter(14);    
+        		table.setSpacingAfter(10);    
         	}
         	document.add(table);
         }
@@ -83,18 +82,17 @@ public class DeckOfCards {
             	    comb.add(second); 
                 }	        		
         		cell = new PdfPCell(comb);
-        		cell.setFixedHeight(56f);
+        		cell.setFixedHeight(48f);
         		cell.setBorderWidth(1);
-        		cell.setPaddingTop(22);
-        		cell.setPaddingLeft(10);     		
+        		cell.setPaddingTop(16);
+        		cell.setPaddingLeft(7);     		
         		Paragraph bord = new Paragraph(" ");
         		PdfPCell border = new PdfPCell(bord);
         		border.setBorderColor(BaseColor.WHITE);
-        		border.setBorderWidth(-1);
+        		border.setBorderWidth(0);
         		table.addCell(cell);
         		table.addCell(border);
-        		//table.setSpacingBefore(2);
-        		table.setSpacingAfter(14); 
+        		table.setSpacingAfter(10); 
         	}
         	document.add(table);
         }       
